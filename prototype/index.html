@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slot Check Reminder — Prototype</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Slot Check Reminder</h1>
+    <p class="tagline">A personal reminder for checking the Einbürgerungstest booking portal.</p>
+  </header>
+
+  <main>
+    <!-- Home view -->
+    <section id="home-view" aria-labelledby="home-heading">
+      <h2 id="home-heading" tabindex="-1">Home</h2>
+      <p id="reminder-status" aria-live="polite">No reminder set yet.</p>
+      <div class="button-row">
+        <button type="button" id="go-setup">Set up a reminder</button>
+        <button type="button" id="go-history">View check-in history</button>
+      </div>
+    </section>
+
+    <!-- Setup view -->
+    <section id="setup-view" aria-labelledby="setup-heading" hidden>
+      <h2 id="setup-heading" tabindex="-1">Set up a reminder</h2>
+      <form id="setup-form">
+        <fieldset>
+          <legend>How often do you want to be reminded to check?</legend>
+
+          <div class="option">
+            <input type="radio" id="cadence-2h" name="cadence" value="every-2h">
+            <label for="cadence-2h">Every 2 hours</label>
+          </div>
+
+          <div class="option">
+            <input type="radio" id="cadence-6h" name="cadence" value="every-6h">
+            <label for="cadence-6h">Every 6 hours</label>
+          </div>
+
+          <div class="option">
+            <input type="radio" id="cadence-daily" name="cadence" value="daily">
+            <label for="cadence-daily">Once a day</label>
+          </div>
+
+          <div class="option">
+            <input type="radio" id="cadence-custom" name="cadence" value="custom">
+            <label for="cadence-custom">Custom</label>
+          </div>
+
+          <div class="custom-fields" id="custom-fields" hidden>
+            <label for="custom-number">Every</label>
+            <input type="number" id="custom-number" name="custom-number" min="1" value="1">
+            <label for="custom-unit" class="visually-hidden">Unit</label>
+            <select id="custom-unit" name="custom-unit">
+              <option value="hours">hours</option>
+              <option value="days">days</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <p id="cadence-error" class="error-message" role="alert" hidden>Please choose how often you'd like to be reminded before saving.</p>
+
+        <div class="button-row">
+          <button type="submit" id="save-reminder">Save reminder</button>
+          <button type="button" id="setup-back" class="secondary">Back</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- History view -->
+    <section id="history-view" aria-labelledby="history-heading" hidden>
+      <h2 id="history-heading" tabindex="-1">Check-in history</h2>
+      <p class="hint">Placeholder entries for this prototype — not real check-ins.</p>
+      <table>
+        <caption class="visually-hidden">Past check-in attempts</caption>
+        <thead>
+          <tr>
+            <th scope="col">When</th>
+            <th scope="col">Result</th>
+          </tr>
+        </thead>
+        <tbody id="history-list">
+          <!-- rows inserted by script.js -->
+        </tbody>
+      </table>
+      <div class="button-row">
+        <button type="button" id="history-back" class="secondary">Back</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
