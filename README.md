@@ -11,6 +11,8 @@ artifacts while the AI Project Manager owns evidence and decisions.
 
 Try it here: https://evelynmoralesmartinez-cmd.github.io/aipm-design-thinking/prototype/
 
+![Prototype screenshot](assets/prototype-screenshot.png)
+
 ## Project at a Glance
 
 The project follows one evidence-driven learning cycle from an original user
