@@ -7,6 +7,10 @@ ideation, prototyping, testing, and iteration. They then configure Claude Code
 with a reusable Skill and focused subagents so the agent can produce most of the
 artifacts while the AI Project Manager owns evidence and decisions.
 
+## Live Prototype
+
+Try it here: https://evelynmoralesmartinez-cmd.github.io/aipm-design-thinking/prototype/
+
 ## Project at a Glance
 
 The project follows one evidence-driven learning cycle from an original user
